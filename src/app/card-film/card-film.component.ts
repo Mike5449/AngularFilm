@@ -1,8 +1,10 @@
+// @ts-ignore
 import { Component, OnInit } from '@angular/core';
-import { modelFilm } from '../Models/modelFilm';
+import {iModelFilm, modelFilm} from '../Models/modelFilm';
 import { FilmDescService } from '../services/film-desc.service';
 import { FilmService } from '../services/film.service';
 
+// @ts-ignore
 @Component({
   selector: 'app-card-film',
   templateUrl: './card-film.component.html',
@@ -10,18 +12,16 @@ import { FilmService } from '../services/film.service';
 })
 export class CardFilmComponent implements OnInit {
 
-  public films?:modelFilm[] ;
+  public film?:iModelFilm ;
 
   constructor(private filmService:FilmService) { }
 
   ngOnInit(): void {
-   
+
     this.filmService.getFilm()
-    .subscribe(data=>this.films=data);
+    .subscribe(data=>this.film=data);
 
-    console.log(this.films)
-
-    
+    console.log(this.film)
   }
 
 }

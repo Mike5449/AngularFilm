@@ -10,9 +10,11 @@ import { DescriptionFilmComponent } from './description-film/description-film.co
 import { FilmDescService} from 'src/app/services/film-desc.service';
 import { FilmService } from 'src/app/services/film.service';
 import { FilmComponent } from './film/film.component';
+// @ts-ignore
 import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 
+// @ts-ignore
 import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [

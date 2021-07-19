@@ -1,5 +1,7 @@
+// @ts-ignore
 import { Component, OnInit ,Input } from '@angular/core';
 
+// @ts-ignore
 @Component({
   selector: 'app-film',
   templateUrl: './film.component.html',
@@ -18,10 +20,10 @@ export class FilmComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    
+
   }
 
-  
+
 
 
 }

@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
 
         <div class="row">
 
@@ -17,4 +17,22 @@
         
         </div>
 
+</div> -->
+<div class="container">
+
+<table class="table table-striped table-dark">
+    <thead>
+
+    </thead>
+    <tbody *ngFor="let film of films">
+        <tr  >
+            <th scope="row"><img src="./assets/camera.png"></th>
+            <td>{{film.Title}}</td>
+            <td>{{film.Type}}</td>
+            <td>{{film.Year}}</td>
+        </tr>
+
+    </tbody>
+</table>
 </div>
+

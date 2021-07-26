@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { modelFilmDesc } from '../Models/modelFilmDesc';
 import { Search } from '../Models/search';
 import { FilmService } from '../services/film.service';
 
@@ -21,7 +22,7 @@ export class TableauFilmComponent implements OnInit {
     .subscribe((data)=>{
      this.films=data;
 
-      //console.log(this.films);
+      console.log(this.films);
     });
   }
 

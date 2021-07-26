@@ -1,0 +1,20 @@
+<div class="container">
+
+        <div class="row">
+
+            <ul *ngFor="let film of films">
+
+                <div *ngIf="film.Title && film.Poster" class="col-sm-4 ">
+
+                 <app-film [title]="film.Title" [poster]="film.Poster" [type]="film.Type" ></app-film>
+
+                </div>
+            </ul>
+
+
+            
+        
+        
+        </div>
+
+</div>

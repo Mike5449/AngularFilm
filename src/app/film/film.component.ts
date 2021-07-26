@@ -10,12 +10,13 @@ import { Component, OnInit ,Input } from '@angular/core';
 export class FilmComponent implements OnInit {
 
   @Input()
+  poster?: string;
 
-  poster!: string;
-  title !: string;
-  Genre !: string;
+  @Input()
+  title?: string;
 
-  films!: any[];
+  @Input()
+  type?: string;
 
   constructor() { }
 

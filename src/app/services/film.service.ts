@@ -1,28 +1,42 @@
 
 // @ts-ignore
-import {HttpClient} from "@angular/common/http";
+import {HttpClient,Response} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {iModelFilm, modelFilm} from "../Models/modelFilm";
+import {iSearch, Search} from "../Models/search";
 import {map} from "rxjs/operators";
 import { Injectable } from '@angular/core';
 
 // @ts-ignore
 @Injectable({providedIn: 'root'})
-export class FilmService{
 
-private url="http://www.omdbapi.com/?i=tt3896198&apikey=a21b9531"
+export class FilmService{
 
 
   constructor(private http:HttpClient) {
 
-   }
+  }
 
-   getData(): Observable<iModelFilm> {
- return this.http.get(this.url).pipe(map((response :any)=> response.json()));
- }
 
-    getFilm():Observable<iModelFilm>{
-     return this.http.get<iModelFilm>(this.url);
+  // getData(): Observable<iModelFilm> {
+     
+
+  //     return this.http.get(this.url).pipe(map((response :Response)=> response.json()));
+
+  // }
+
+  getFilm(value:string):Observable<any>{
+    const url='http://www.omdbapi.com/?s='+value+'&apikey=a21b9531';
+
+      return this.http.get<any>(url).pipe(map(data=> data.Search));
+
+  }
+
+  searchMovieById(value:string):Observable<any>{
+
+    const url='http://www.omdbapi.com/?i='+value+'&apikey=a21b9531';
+
+      return this.http.get<any>(url).pipe(map(data=> data));
+
   }
 
 }

@@ -1,0 +1,8 @@
+.form-control{
+    width: 500px;
+}
+.navbar navbar-dark bg-dark{
+    background-color: dimgray;
+}
+
+.navbar navbar-dark bg-dark{display: inline-block;}

@@ -16,11 +16,12 @@ import { HeaderComponent } from './header/header.component';
 
 // @ts-ignore
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   {path:"cardFilm" , component : CardFilmComponent},
   {path:"tableauFilm" , component : TableauFilmComponent},
-  {path:"descFilm" , component : DescriptionFilmComponent},
+  {path:"descFilm/:id" , component : DescriptionFilmComponent},
   {path:"" , redirectTo:'cardFilm',pathMatch:'full'},
   {path:"**" , redirectTo :"cardFilm"},
 ];
@@ -37,7 +38,8 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [FilmService, FilmDescService],
   bootstrap: [AppComponent]

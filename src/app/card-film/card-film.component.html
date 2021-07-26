@@ -1,8 +1,17 @@
 
-<div class="card mb-3">
-  <p style="color: white">
-    {{ film | json }}
-  </p>
-    <app-film></app-film>
+<div  class="container" >
+
+    <div class="row">
+        <input type="text" [(ngModel)]="titreFilm" class="form-control mr-sm-2">
+        <button  class="btn btn-success " (click)="search()">Search</button>
+    </div>
+
+    <button *ngFor="let film of films " (click)="descFilm(film.imdbID)" >
+    
+        <app-film [title]="film.Title" [type]="film.Type" [poster]="film.Poster" class="col-sm-12"></app-film>
+            
+    </button>
+             
 </div>
+
 

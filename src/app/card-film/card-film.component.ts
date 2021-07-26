@@ -1,6 +1,8 @@
 // @ts-ignore
 import { Component, OnInit } from '@angular/core';
-import {iModelFilm, modelFilm} from '../Models/modelFilm';
+import { Router } from '@angular/router';
+import { map } from 'rxjs/operators';
+import {iSearch, Search} from '../Models/search';
 import { FilmDescService } from '../services/film-desc.service';
 import { FilmService } from '../services/film.service';
 
@@ -11,17 +13,39 @@ import { FilmService } from '../services/film.service';
   styleUrls: ['./card-film.component.css']
 })
 export class CardFilmComponent implements OnInit {
+  
 
-  public film?:iModelFilm ;
+   films?:Search[] ;
+   titreFilm="";
 
-  constructor(private filmService:FilmService) { }
+
+  constructor(private filmService:FilmService ,private router:Router) { }
 
   ngOnInit(): void {
 
-    this.filmService.getFilm()
-    .subscribe(data=>this.film=data);
 
-    console.log(this.film)
+    this.filmService.getFilm('Titanic')
+   
+    .subscribe((data:Search[])=>{
+     this.films=data;
+
+    });
+
+    
   }
 
+  descFilm(id?:string){
+    
+    this.router.navigate(['/descFilm',id])
+  }
+
+  search(){
+
+    this.filmService.getFilm(this.titreFilm)
+   
+    .subscribe((data)=>{
+     this.films=data;
+
+    });
+  }
 }

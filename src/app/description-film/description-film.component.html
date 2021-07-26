@@ -1,1 +1,21 @@
-<p>description-film works!</p>
+<div *ngIf="filmDesc" class="container">
+
+    <img [src]='filmDesc.Poster' class="col-sm-4 " alt="...">
+
+    <div class="col-sm-8">
+
+        <h2 >Titre: {{filmDesc.Title}}</h2>
+        <!-- <p >Desc: {{filmDesc.PlotDescription}}</p> -->
+        <p >Year: {{filmDesc.Year}}</p>
+        <p >Rated: {{filmDesc.Rated}}</p>
+        <p >Released :{{filmDesc.Released}}</p>
+        <p >Runtime: {{filmDesc.Runtime}}</p>
+        <p >Genre :{{filmDesc.Genre}}</p>
+        <p >PlotDescription: {{filmDesc.PlotDescription}}</p>
+        <p >Country: {{filmDesc.Country}}</p>
+        <p >Language :{{filmDesc.Language}}</p>
+            
+
+    </div>
+
+</div>
